@@ -1,0 +1,41 @@
+2019-08-01 13:06:53,586 file.manager INFO 1.2.0
+2019-08-01 13:06:53,587 file.manager INFO Copyright (C) 2003-2010
+2019-08-01 13:06:53,587 file.manager INFO   Noriaki Ando
+2019-08-01 13:06:53,587 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-01 13:06:53,587 file.manager INFO Manager starting.
+2019-08-01 13:06:53,587 file.manager INFO Starting local logging.
+2019-08-01 13:06:53,588 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-01 13:06:53,591 file.ManagerServant INFO Master manager not found
+2019-08-01 13:06:53,592 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-01 13:06:53,595 file.manager INFO Component type conf file: ColorJudge.conf loaded.
+2019-08-01 13:06:53,597 file.ec_base INFO setRate(1000000.000000) done
+2019-08-01 13:06:53,598 file.ec_base INFO setRate(1000.000000) done
+2019-08-01 13:06:53,598 file.rtobject INFO 1 execution context was created.
+2019-08-01 13:06:53,601 file.rtobject INFO Initial active configuration set is default.
+2019-08-01 13:07:01,161 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-01 13:07:01,161 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-01 13:07:03,608 file.ManagerServant INFO Master manager not found
+2019-08-01 13:07:11,277 file.colorSwitcher ERROR interface matched with old descriptor: port.VelocitySwitcherService.KanamuraRobotics::VelocitySwitcherService
+2019-08-01 13:07:13,628 file.ManagerServant INFO Master manager not found
+2019-08-01 13:07:14,178 file.SdoServiceAdmin INFO SDO service has been deleted: ec32223f-8fa5-4fec-b7f7-31a60b4526a5
+2019-08-01 13:07:16,107 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-01 13:07:16,107 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-01 13:07:23,652 file.ManagerServant INFO Master manager not found
+2019-08-01 13:07:33,673 file.ManagerServant INFO Master manager not found
+2019-08-01 13:07:39,882 file.rtobject ERROR Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/OpenRTM_aist/RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "ColorJudge.py", line 185, in onActivated
+    retval = self._colorSwitcherService._ptr().setSwitch(True)
+  File "/home/ogata/workspace/ColorJudge/VelocitySwitcher_idl.py", line 50, in setSwitch
+    return _omnipy.invoke(self, "setSwitch", _0_KanamuraRobotics.VelocitySwitcherService._d_setSwitch, args)
+OBJECT_NOT_EXIST: CORBA.OBJECT_NOT_EXIST(omniORB.OBJECT_NOT_EXIST_NoMatch, CORBA.COMPLETED_NO)
+
+2019-08-01 13:07:43,696 file.ManagerServant INFO Master manager not found
+2019-08-01 13:07:46,862 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-01 13:07:53,718 file.ManagerServant INFO Master manager not found
+2019-08-01 13:08:03,738 file.ManagerServant INFO Master manager not found
+2019-08-01 13:08:13,055 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-01 13:08:13,057 file.colorSwitcher ERROR interface matched with old descriptor: port.VelocitySwitcherService.KanamuraRobotics::VelocitySwitcherService
+2019-08-01 13:08:13,060 file.ec_worker WARNING ExecutionContext is already stopped.
+2019-08-01 13:08:13,060 file.ec_base ERROR Invoking on_shutdown() for each RTC failed.

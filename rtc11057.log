@@ -1,0 +1,47 @@
+2019-08-01 13:10:54,565 file.manager INFO 1.2.0
+2019-08-01 13:10:54,565 file.manager INFO Copyright (C) 2003-2010
+2019-08-01 13:10:54,565 file.manager INFO   Noriaki Ando
+2019-08-01 13:10:54,565 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-01 13:10:54,566 file.manager INFO Manager starting.
+2019-08-01 13:10:54,566 file.manager INFO Starting local logging.
+2019-08-01 13:10:54,567 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-01 13:10:54,571 file.ManagerServant INFO Master manager not found
+2019-08-01 13:10:54,572 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-01 13:10:54,575 file.manager INFO Component type conf file: ColorJudge.conf loaded.
+2019-08-01 13:10:54,577 file.ec_base INFO setRate(1000000.000000) done
+2019-08-01 13:10:54,577 file.ec_base INFO setRate(1000.000000) done
+2019-08-01 13:10:54,577 file.rtobject INFO 1 execution context was created.
+2019-08-01 13:10:54,584 file.rtobject INFO Initial active configuration set is default.
+2019-08-01 13:10:58,358 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-01 13:10:58,358 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-01 13:11:04,585 file.ManagerServant INFO Master manager not found
+2019-08-01 13:11:06,527 file.colorSwitcher ERROR interface matched with old descriptor: port.VelocitySwitcherService.KanamuraRobotics::VelocitySwitcherService
+2019-08-01 13:11:10,374 file.SdoServiceAdmin INFO SDO service has been deleted: a61162b0-e8fb-4bd7-a6a7-9a4d95984323
+2019-08-01 13:11:14,547 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-01 13:11:14,548 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-01 13:11:14,604 file.ManagerServant INFO Master manager not found
+2019-08-01 13:11:24,631 file.ManagerServant INFO Master manager not found
+2019-08-01 13:11:34,652 file.ManagerServant INFO Master manager not found
+2019-08-01 13:11:44,673 file.ManagerServant INFO Master manager not found
+2019-08-01 13:11:54,694 file.ManagerServant INFO Master manager not found
+2019-08-01 13:12:04,714 file.ManagerServant INFO Master manager not found
+2019-08-01 13:12:14,737 file.ManagerServant INFO Master manager not found
+2019-08-01 13:12:24,756 file.ManagerServant INFO Master manager not found
+2019-08-01 13:12:34,776 file.ManagerServant INFO Master manager not found
+2019-08-01 13:12:44,797 file.ManagerServant INFO Master manager not found
+2019-08-01 13:12:54,820 file.ManagerServant INFO Master manager not found
+2019-08-01 13:13:04,842 file.ManagerServant INFO Master manager not found
+2019-08-01 13:13:14,864 file.ManagerServant INFO Master manager not found
+2019-08-01 13:13:24,885 file.ManagerServant INFO Master manager not found
+2019-08-01 13:13:34,906 file.ManagerServant INFO Master manager not found
+2019-08-01 13:13:44,926 file.ManagerServant INFO Master manager not found
+2019-08-01 13:13:54,946 file.ManagerServant INFO Master manager not found
+2019-08-01 13:14:04,965 file.ManagerServant INFO Master manager not found
+2019-08-01 13:14:14,985 file.ManagerServant INFO Master manager not found
+2019-08-01 13:14:25,005 file.ManagerServant INFO Master manager not found
+2019-08-01 13:14:35,026 file.ManagerServant INFO Master manager not found
+2019-08-01 13:14:45,048 file.ManagerServant INFO Master manager not found
+2019-08-01 13:14:49,546 file.colorSwitcher ERROR interface matched with old descriptor: port.VelocitySwitcherService.KanamuraRobotics::VelocitySwitcherService
+2019-08-01 13:14:54,767 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-01 13:14:54,770 file.ec_worker WARNING ExecutionContext is already stopped.
+2019-08-01 13:14:54,771 file.ec_base ERROR Invoking on_shutdown() for each RTC failed.

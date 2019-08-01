@@ -1,0 +1,11 @@
+2019-08-01 13:00:00,813 file.manager INFO 1.2.0
+2019-08-01 13:00:00,813 file.manager INFO Copyright (C) 2003-2010
+2019-08-01 13:00:00,813 file.manager INFO   Noriaki Ando
+2019-08-01 13:00:00,814 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-01 13:00:00,814 file.manager INFO Manager starting.
+2019-08-01 13:00:00,814 file.manager INFO Starting local logging.
+2019-08-01 13:00:00,816 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-01 13:00:00,821 file.ManagerServant INFO Master manager not found
+2019-08-01 13:00:00,823 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-01 13:00:00,827 file.manager ERROR createComponent: RTC creation failed: ColorJudge
+2019-08-01 13:00:10,836 file.ManagerServant INFO Master manager not found

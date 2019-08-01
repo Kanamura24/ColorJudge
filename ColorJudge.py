@@ -1,0 +1,406 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# -*- Python -*-
+
+"""
+ @file ColorJudge.py
+ @brief judge the color of anemy 
+ @date $Date$
+
+
+"""
+import sys
+import time
+sys.path.append(".")
+
+# Import RTM module
+import RTC
+import OpenRTM_aist
+
+import VelocitySwitcher_idl
+import Img
+
+# Import Service implementation class
+# <rtc-template block="service_impl">
+
+# </rtc-template>
+
+# Import Service stub modules
+# <rtc-template block="consumer_import">
+import KanamuraRobotics, KanamuraRobotics__POA
+import Img, Img__POA
+
+import cv2
+import numpy as np
+
+#red
+LOW_COLOR = np.array([110, 50, 50])
+HIGH_COLOR = np.array([130, 255, 255])
+
+AREA_RATIO_THRESHOLD = 0.1
+
+# </rtc-template>
+
+
+# This module's spesification
+# <rtc-template block="module_spec">
+colorjudge_spec = ["implementation_id", "ColorJudge", 
+		 "type_name",         "ColorJudge", 
+		 "description",       "judge the color of anemy ", 
+		 "version",           "1.0.0", 
+		 "vendor",            "VenderName", 
+		 "category",          "Category", 
+		 "activity_type",     "STATIC", 
+		 "max_instance",      "1", 
+		 "language",          "Python", 
+		 "lang_type",         "SCRIPT",
+		 "conf.default.team_color", "red",
+
+		 "conf.__widget__.team_color", "radio",
+		 "conf.__constraints__.team_color", "(red, blue)",
+
+         "conf.__type__.team_color", "long",
+
+		 ""]
+# </rtc-template>
+
+##
+# @class ColorJudge
+# @brief judge the color of anemy 
+# 
+# 
+class ColorJudge(OpenRTM_aist.DataFlowComponentBase):
+	
+	##
+	# @brief constructor
+	# @param manager Maneger Object
+	# 
+	def __init__(self, manager):
+		OpenRTM_aist.DataFlowComponentBase.__init__(self, manager)
+
+		self._d_cameraImage = OpenRTM_aist.instantiateDataType(Img.TimedCameraImage)
+		"""
+		"""
+		self._cameraImageIn = OpenRTM_aist.InPort("cameraImage", self._d_cameraImage)
+		self._d_color = OpenRTM_aist.instantiateDataType(RTC.TimedLong)
+		"""
+		"""
+		self._colorOut = OpenRTM_aist.OutPort("color", self._d_color)
+
+		"""
+		"""
+		self._colorSwitcherPort = OpenRTM_aist.CorbaPort("colorSwitcher")
+
+		
+
+		"""
+		"""
+		self._colorSwitcherService = OpenRTM_aist.CorbaConsumer(interfaceType=KanamuraRobotics.VelocitySwitcherService)
+
+		# initialize of configuration-data.
+		# <rtc-template block="init_conf_param">
+		"""
+		
+		 - Name:  team_color
+		 - DefaultValue: red
+		"""
+		self._team_color = ["red"]
+		
+		# </rtc-template>
+
+
+		 
+	##
+	#
+	# The initialize action (on CREATED->ALIVE transition)
+	# formaer rtc_init_entry() 
+	# 
+	# @return RTC::ReturnCode_t
+	# 
+	#
+	def onInitialize(self):
+		# Bind variables and configuration variable
+		self.bindParameter("team_color", self._team_color, "red")
+		
+		# Set InPort buffers
+		self.addInPort("cameraImage",self._cameraImageIn)
+		
+		# Set OutPort buffers
+		self.addOutPort("color",self._colorOut)
+		
+		# Set service provider to Ports
+		
+		# Set service consumers to Ports
+		self._colorSwitcherPort.registerConsumer("KanamuraRobotics::VelocitySwitcherService", "VelocitySwitcherService", self._colorSwitcherService)
+		
+		# Set CORBA Service Ports
+		self.addPort(self._colorSwitcherPort)
+
+                self._detect_count = 0
+
+                self._detect_count_threshold = 45
+		
+		return RTC.RTC_OK
+	
+	###
+	## 
+	## The finalize action (on ALIVE->END transition)
+	## formaer rtc_exiting_entry()
+	## 
+	## @return RTC::ReturnCode_t
+	#
+	## 
+	#def onFinalize(self):
+	#
+	#	return RTC.RTC_OK
+	
+	###
+	##
+	## The startup action when ExecutionContext startup
+	## former rtc_starting_entry()
+	## 
+	## @param ec_id target ExecutionContext Id
+	##
+	## @return RTC::ReturnCode_t
+	##
+	##
+	#def onStartup(self, ec_id):
+	#
+	#	return RTC.RTC_OK
+	
+	###
+	##
+	## The shutdown action when ExecutionContext stop
+	## former rtc_stopping_entry()
+	##
+	## @param ec_id target ExecutionContext Id
+	##
+	## @return RTC::ReturnCode_t
+	##
+	##
+	#def onShutdown(self, ec_id):
+	#
+	#	return RTC.RTC_OK
+	
+	##
+	#
+	# The activated action (Active state entry action)
+	# former rtc_active_entry()
+	#
+	# @param ec_id target ExecutionContext Id
+	# 
+	# @return RTC::ReturnCode_t
+	#
+	#
+	def onActivated(self, ec_id):
+                print("onActivated")
+	        retval = self._colorSwitcherService._ptr().setSwitch(True)
+                print("retval = %s" % retval)
+
+
+                
+		return RTC.RTC_OK
+	
+	##
+	#
+	# The deactivated action (Active state exit action)
+	# former rtc_active_exit()
+	#
+	# @param ec_id target ExecutionContext Id
+	#
+	# @return RTC::ReturnCode_t
+	#
+	#
+	def onDeactivated(self, ec_id):
+                print("onDeactivated")
+	
+		return RTC.RTC_OK
+
+
+        def _detectColorArea(self, img):
+                cameraImage = np.fromstring(img.data.image.raw_data,
+                                            dtype=np.uint8).reshape(img.data.image.height,
+                                                                    img.data.image.width, -1)
+
+                pos = find_specific_color(img,
+                                          AREA_RATIO_THRESHOLD,
+                                          LOW_COLOR,
+                                          HIGH_COLOR)
+                
+                if pos is not None:
+                        cv2.circle(cameraImage, pos, 10, (0,0,255), -1)
+                        
+                return pos, cameraImage
+
+        def _do_something(self):
+                print("im sleep")
+                retval = self._colorSwitcherService._ptr().setSwitch(False)
+                retval = self._colorSwitcherService._ptr().setSwitch(True)
+                pass
+
+        
+	##
+	#
+	# The execution action that is invoked periodically
+	# former rtc_active_do()
+	#
+	# @param ec_id target ExecutionContext Id
+	#
+	# @return RTC::ReturnCode_t
+	#
+	#
+	def onExecute(self, ec_id):
+                if self._cameraImageIn.isNew():
+                        img = self._cameraImageIn.read()
+                        
+                        pos, cameraImage = self._detectColorArea(img)
+                        
+                        #resizedCameraImage = cv2.resize(cameraImage, (img.data.image.width*4, img.data.image.height*4))
+
+                        if pos is not None:
+                                self._detect_count = self._detect_count + 1
+                                print("Detect Count = %d" % self._detect_count)
+                        else:
+                                self._detect_count = 0
+
+                        
+                        cv2.imshow('frame', cv2.cvtColor(cameraImage, cv2.COLOR_BGR2RGB))
+                        cv2.waitKey(1)
+
+
+                if self._detect_count > self._detect_count_threshold:
+                        self._do_something()
+	                self._detect_count = 0
+
+                        
+		return RTC.RTC_OK
+	
+	###
+	##
+	## The aborting action when main logic error occurred.
+	## former rtc_aborting_entry()
+	##
+	## @param ec_id target ExecutionContext Id
+	##
+	## @return RTC::ReturnCode_t
+	##
+	##
+	#def onAborting(self, ec_id):
+	#
+	#	return RTC.RTC_OK
+	
+	###
+	##
+	## The error action in ERROR state
+	## former rtc_error_do()
+	##
+	## @param ec_id target ExecutionContext Id
+	##
+	## @return RTC::ReturnCode_t
+	##
+	##
+	#def onError(self, ec_id):
+	#
+	#	return RTC.RTC_OK
+	
+	###
+	##
+	## The reset action that is invoked resetting
+	## This is same but different the former rtc_init_entry()
+	##
+	## @param ec_id target ExecutionContext Id
+	##
+	## @return RTC::ReturnCode_t
+	##
+	##
+	#def onReset(self, ec_id):
+	#
+	#	return RTC.RTC_OK
+	
+	###
+	##
+	## The state update action that is invoked after onExecute() action
+	## no corresponding operation exists in OpenRTm-aist-0.2.0
+	##
+	## @param ec_id target ExecutionContext Id
+	##
+	## @return RTC::ReturnCode_t
+	##
+
+	##
+	#def onStateUpdate(self, ec_id):
+	#
+	#	return RTC.RTC_OK
+	
+	###
+	##
+	## The action that is invoked when execution context's rate is changed
+	## no corresponding operation exists in OpenRTm-aist-0.2.0
+	##
+	## @param ec_id target ExecutionContext Id
+	##
+	## @return RTC::ReturnCode_t
+	##
+	##
+	#def onRateChanged(self, ec_id):
+	#
+	#	return RTC.RTC_OK
+	
+
+def find_specific_color(frame, AREA_RATIO_THRESHOLD, LOW_COLOR, HIGH_COLOR):
+
+    #h,w,c = frame.shape
+    c = 3
+    h = frame.data.image.height
+    w = frame.data.image.width
+
+    #print(h, w)
+
+    frame = np.fromstring(frame.data.image.raw_data, dtype = np.uint8).reshape(h, w, -1)
+
+
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+
+    ex_img = cv2.inRange(hsv, LOW_COLOR, HIGH_COLOR)
+
+
+    _,contours,hierarchy = cv2.findContours(ex_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+
+    areas = np.array(list(map(cv2.contourArea,contours)))
+
+    if len(areas) == 0 or np.max(areas) / (h*w) < AREA_RATIO_THRESHOLD:
+
+        #print("the area is too small")
+        return None
+    else:
+
+        max_idx = np.argmax(areas)
+        max_area = areas[max_idx]
+        result = cv2.moments(contours[max_idx])
+        x = int(result["m10"]/result["m00"])
+        y = int(result["m01"]/result["m00"])
+        return (x,y)
+
+def ColorJudgeInit(manager):
+    profile = OpenRTM_aist.Properties(defaults_str=colorjudge_spec)
+    manager.registerFactory(profile,
+                            ColorJudge,
+                            OpenRTM_aist.Delete)
+
+def MyModuleInit(manager):
+    ColorJudgeInit(manager)
+
+    # Create a component
+    comp = manager.createComponent("ColorJudge")
+
+def main():
+	mgr = OpenRTM_aist.Manager.init(sys.argv)
+	mgr.setModuleInitProc(MyModuleInit)
+	mgr.activateManager()
+	mgr.runManager()
+
+if __name__ == "__main__":
+	main()
+

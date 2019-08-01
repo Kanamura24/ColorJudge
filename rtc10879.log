@@ -1,0 +1,32 @@
+2019-08-01 13:00:27,879 file.manager INFO 1.2.0
+2019-08-01 13:00:27,879 file.manager INFO Copyright (C) 2003-2010
+2019-08-01 13:00:27,879 file.manager INFO   Noriaki Ando
+2019-08-01 13:00:27,879 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-01 13:00:27,879 file.manager INFO Manager starting.
+2019-08-01 13:00:27,880 file.manager INFO Starting local logging.
+2019-08-01 13:00:27,881 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-01 13:00:27,884 file.ManagerServant INFO Master manager not found
+2019-08-01 13:00:27,885 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-01 13:00:27,888 file.manager INFO Component type conf file: ColorJudge.conf loaded.
+2019-08-01 13:00:27,890 file.ec_base INFO setRate(1000000.000000) done
+2019-08-01 13:00:27,890 file.ec_base INFO setRate(1000.000000) done
+2019-08-01 13:00:27,891 file.rtobject INFO 1 execution context was created.
+2019-08-01 13:00:27,894 file.rtobject INFO Initial active configuration set is default.
+2019-08-01 13:00:37,899 file.ManagerServant INFO Master manager not found
+2019-08-01 13:00:47,917 file.ManagerServant INFO Master manager not found
+2019-08-01 13:00:57,937 file.ManagerServant INFO Master manager not found
+2019-08-01 13:01:07,956 file.ManagerServant INFO Master manager not found
+2019-08-01 13:01:17,973 file.ManagerServant INFO Master manager not found
+2019-08-01 13:01:27,990 file.ManagerServant INFO Master manager not found
+2019-08-01 13:01:38,008 file.ManagerServant INFO Master manager not found
+2019-08-01 13:01:48,026 file.ManagerServant INFO Master manager not found
+2019-08-01 13:01:58,044 file.ManagerServant INFO Master manager not found
+2019-08-01 13:02:08,064 file.ManagerServant INFO Master manager not found
+2019-08-01 13:02:18,084 file.ManagerServant INFO Master manager not found
+2019-08-01 13:02:23,365 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-01 13:02:23,366 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-01 13:02:28,106 file.ManagerServant INFO Master manager not found
+2019-08-01 13:02:37,558 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-01 13:02:37,561 file.ec_worker WARNING ExecutionContext is already stopped.
+2019-08-01 13:02:37,561 file.ec_base ERROR Invoking on_shutdown() for each RTC failed.
+2019-08-01 13:02:38,127 file.ManagerServant INFO Master manager not found

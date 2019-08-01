@@ -1,0 +1,63 @@
+2019-08-01 13:36:21,488 file.manager INFO 1.2.0
+2019-08-01 13:36:21,488 file.manager INFO Copyright (C) 2003-2010
+2019-08-01 13:36:21,488 file.manager INFO   Noriaki Ando
+2019-08-01 13:36:21,488 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-01 13:36:21,488 file.manager INFO Manager starting.
+2019-08-01 13:36:21,488 file.manager INFO Starting local logging.
+2019-08-01 13:36:21,489 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-01 13:36:21,493 file.ManagerServant INFO Master manager not found
+2019-08-01 13:36:21,494 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-01 13:36:21,496 file.manager INFO Component type conf file: ColorJudge.conf loaded.
+2019-08-01 13:36:21,498 file.ec_base INFO setRate(1000000.000000) done
+2019-08-01 13:36:21,498 file.ec_base INFO setRate(1000.000000) done
+2019-08-01 13:36:21,499 file.rtobject INFO 1 execution context was created.
+2019-08-01 13:36:21,503 file.rtobject INFO Initial active configuration set is default.
+2019-08-01 13:36:26,486 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-01 13:36:26,486 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-01 13:36:30,902 file.colorSwitcher ERROR interface matched with old descriptor: port.VelocitySwitcherService.KanamuraRobotics::VelocitySwitcherService
+2019-08-01 13:36:31,507 file.ManagerServant INFO Master manager not found
+2019-08-01 13:36:39,504 file.SdoServiceAdmin INFO SDO service has been deleted: 86773198-fc39-472c-986b-cbe7626a5d79
+2019-08-01 13:36:41,529 file.ManagerServant INFO Master manager not found
+2019-08-01 13:36:43,534 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-01 13:36:43,534 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-01 13:36:51,549 file.ManagerServant INFO Master manager not found
+2019-08-01 13:37:01,569 file.ManagerServant INFO Master manager not found
+2019-08-01 13:37:11,592 file.ManagerServant INFO Master manager not found
+2019-08-01 13:37:21,612 file.ManagerServant INFO Master manager not found
+2019-08-01 13:37:31,634 file.ManagerServant INFO Master manager not found
+2019-08-01 13:37:41,656 file.ManagerServant INFO Master manager not found
+2019-08-01 13:37:51,679 file.ManagerServant INFO Master manager not found
+2019-08-01 13:38:01,701 file.ManagerServant INFO Master manager not found
+2019-08-01 13:38:11,720 file.ManagerServant INFO Master manager not found
+2019-08-01 13:38:21,739 file.ManagerServant INFO Master manager not found
+2019-08-01 13:38:31,760 file.ManagerServant INFO Master manager not found
+2019-08-01 13:38:41,781 file.ManagerServant INFO Master manager not found
+2019-08-01 13:38:51,801 file.ManagerServant INFO Master manager not found
+2019-08-01 13:39:01,824 file.ManagerServant INFO Master manager not found
+2019-08-01 13:39:11,844 file.ManagerServant INFO Master manager not found
+2019-08-01 13:39:21,864 file.ManagerServant INFO Master manager not found
+2019-08-01 13:39:31,884 file.ManagerServant INFO Master manager not found
+2019-08-01 13:39:41,904 file.ManagerServant INFO Master manager not found
+2019-08-01 13:39:51,924 file.ManagerServant INFO Master manager not found
+2019-08-01 13:40:01,947 file.ManagerServant INFO Master manager not found
+2019-08-01 13:40:11,967 file.ManagerServant INFO Master manager not found
+2019-08-01 13:40:21,989 file.ManagerServant INFO Master manager not found
+2019-08-01 13:40:32,009 file.ManagerServant INFO Master manager not found
+2019-08-01 13:40:42,029 file.ManagerServant INFO Master manager not found
+2019-08-01 13:40:52,050 file.ManagerServant INFO Master manager not found
+2019-08-01 13:41:02,069 file.ManagerServant INFO Master manager not found
+2019-08-01 13:41:12,090 file.ManagerServant INFO Master manager not found
+2019-08-01 13:41:22,109 file.ManagerServant INFO Master manager not found
+2019-08-01 13:41:22,253 file.rtobject ERROR Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/OpenRTM_aist/RTObject.py", line 1571, in on_execute
+    ret = self.onExecute(ec_id)
+  File "ColorJudge.py", line 256, in onExecute
+    pos, cameraImage = self._deltectColorArea(img)
+AttributeError: ColorJudge instance has no attribute '_deltectColorArea'
+
+2019-08-01 13:41:29,685 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-01 13:41:32,130 file.ManagerServant INFO Master manager not found
+2019-08-01 13:41:36,038 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-01 13:41:36,040 file.colorSwitcher ERROR interface matched with old descriptor: port.VelocitySwitcherService.KanamuraRobotics::VelocitySwitcherService
+2019-08-01 13:41:36,043 file.ec_worker WARNING ExecutionContext is already stopped.
+2019-08-01 13:41:36,043 file.ec_base ERROR Invoking on_shutdown() for each RTC failed.

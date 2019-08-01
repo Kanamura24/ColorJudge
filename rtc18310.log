@@ -1,0 +1,87 @@
+2019-08-01 15:51:34,126 file.manager INFO 1.2.0
+2019-08-01 15:51:34,126 file.manager INFO Copyright (C) 2003-2010
+2019-08-01 15:51:34,127 file.manager INFO   Noriaki Ando
+2019-08-01 15:51:34,127 file.manager INFO   Intelligent Systems Research Institute, AIST
+2019-08-01 15:51:34,127 file.manager INFO Manager starting.
+2019-08-01 15:51:34,127 file.manager INFO Starting local logging.
+2019-08-01 15:51:34,128 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2019-08-01 15:51:34,133 file.ManagerServant INFO Master manager not found
+2019-08-01 15:51:34,134 file.LocalServiceAdmin INFO All the local services are enabled.
+2019-08-01 15:51:34,137 file.manager INFO Component type conf file: ColorJudge.conf loaded.
+2019-08-01 15:51:34,139 file.ec_base INFO setRate(1000000.000000) done
+2019-08-01 15:51:34,139 file.ec_base INFO setRate(1000.000000) done
+2019-08-01 15:51:34,140 file.rtobject INFO 1 execution context was created.
+2019-08-01 15:51:34,145 file.rtobject INFO Initial active configuration set is default.
+2019-08-01 15:51:39,673 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2019-08-01 15:51:39,673 file.SdoServiceAdmin ERROR type  already exists.
+2019-08-01 15:51:44,146 file.ManagerServant INFO Master manager not found
+2019-08-01 15:51:54,167 file.ManagerServant INFO Master manager not found
+2019-08-01 15:52:04,188 file.ManagerServant INFO Master manager not found
+2019-08-01 15:52:14,209 file.ManagerServant INFO Master manager not found
+2019-08-01 15:52:23,274 file.colorSwitcher ERROR interface matched with old descriptor: port.VelocitySwitcherService.KanamuraRobotics::VelocitySwitcherService
+2019-08-01 15:52:24,230 file.ManagerServant INFO Master manager not found
+2019-08-01 15:52:34,250 file.ManagerServant INFO Master manager not found
+2019-08-01 15:52:44,270 file.ManagerServant INFO Master manager not found
+2019-08-01 15:52:54,291 file.ManagerServant INFO Master manager not found
+2019-08-01 15:53:04,313 file.ManagerServant INFO Master manager not found
+2019-08-01 15:53:14,332 file.ManagerServant INFO Master manager not found
+2019-08-01 15:53:24,353 file.ManagerServant INFO Master manager not found
+2019-08-01 15:53:34,374 file.ManagerServant INFO Master manager not found
+2019-08-01 15:53:44,393 file.ManagerServant INFO Master manager not found
+2019-08-01 15:53:54,412 file.ManagerServant INFO Master manager not found
+2019-08-01 15:54:04,434 file.ManagerServant INFO Master manager not found
+2019-08-01 15:54:14,455 file.ManagerServant INFO Master manager not found
+2019-08-01 15:54:24,475 file.ManagerServant INFO Master manager not found
+2019-08-01 15:54:34,496 file.ManagerServant INFO Master manager not found
+2019-08-01 15:54:44,516 file.ManagerServant INFO Master manager not found
+2019-08-01 15:54:54,537 file.ManagerServant INFO Master manager not found
+2019-08-01 15:55:04,556 file.ManagerServant INFO Master manager not found
+2019-08-01 15:55:14,576 file.ManagerServant INFO Master manager not found
+2019-08-01 15:55:24,597 file.ManagerServant INFO Master manager not found
+2019-08-01 15:55:34,617 file.ManagerServant INFO Master manager not found
+2019-08-01 15:55:44,637 file.ManagerServant INFO Master manager not found
+2019-08-01 15:55:54,656 file.ManagerServant INFO Master manager not found
+2019-08-01 15:56:04,673 file.ManagerServant INFO Master manager not found
+2019-08-01 15:56:14,691 file.ManagerServant INFO Master manager not found
+2019-08-01 15:56:24,710 file.ManagerServant INFO Master manager not found
+2019-08-01 15:56:34,729 file.ManagerServant INFO Master manager not found
+2019-08-01 15:56:44,749 file.ManagerServant INFO Master manager not found
+2019-08-01 15:56:54,769 file.ManagerServant INFO Master manager not found
+2019-08-01 15:57:04,787 file.ManagerServant INFO Master manager not found
+2019-08-01 15:57:14,806 file.ManagerServant INFO Master manager not found
+2019-08-01 15:57:24,826 file.ManagerServant INFO Master manager not found
+2019-08-01 15:57:34,846 file.ManagerServant INFO Master manager not found
+2019-08-01 15:57:44,865 file.ManagerServant INFO Master manager not found
+2019-08-01 15:57:54,884 file.ManagerServant INFO Master manager not found
+2019-08-01 15:58:04,903 file.ManagerServant INFO Master manager not found
+2019-08-01 15:58:14,920 file.ManagerServant INFO Master manager not found
+2019-08-01 15:58:24,940 file.ManagerServant INFO Master manager not found
+2019-08-01 15:58:30,467 file.rtobject ERROR Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/OpenRTM_aist/RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "ColorJudge.py", line 197, in onActivated
+    retval = self._colorSwitcherService._ptr().setSwitch(True)
+  File "/home/ogata/workspace/ColorJudge/VelocitySwitcher_idl.py", line 50, in setSwitch
+    return _omnipy.invoke(self, "setSwitch", _0_KanamuraRobotics.VelocitySwitcherService._d_setSwitch, args)
+OBJECT_NOT_EXIST: CORBA.OBJECT_NOT_EXIST(omniORB.OBJECT_NOT_EXIST_NoMatch, CORBA.COMPLETED_NO)
+
+2019-08-01 15:58:34,960 file.ManagerServant INFO Master manager not found
+2019-08-01 15:58:43,322 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2019-08-01 15:58:44,981 file.ManagerServant INFO Master manager not found
+2019-08-01 15:58:55,002 file.ManagerServant INFO Master manager not found
+2019-08-01 15:59:05,023 file.ManagerServant INFO Master manager not found
+2019-08-01 15:59:15,042 file.ManagerServant INFO Master manager not found
+2019-08-01 15:59:25,060 file.ManagerServant INFO Master manager not found
+2019-08-01 15:59:35,083 file.ManagerServant INFO Master manager not found
+2019-08-01 15:59:45,104 file.ManagerServant INFO Master manager not found
+2019-08-01 15:59:55,127 file.ManagerServant INFO Master manager not found
+2019-08-01 16:00:05,145 file.ManagerServant INFO Master manager not found
+2019-08-01 16:00:15,164 file.ManagerServant INFO Master manager not found
+2019-08-01 16:00:25,182 file.ManagerServant INFO Master manager not found
+2019-08-01 16:00:35,201 file.ManagerServant INFO Master manager not found
+2019-08-01 16:00:45,220 file.ManagerServant INFO Master manager not found
+2019-08-01 16:00:55,240 file.ManagerServant INFO Master manager not found
+2019-08-01 16:01:05,259 file.ManagerServant INFO Master manager not found
+2019-08-01 16:01:15,278 file.ManagerServant INFO Master manager not found
+2019-08-01 16:01:25,297 file.ManagerServant INFO Master manager not found
+2019-08-01 16:01:35,317 file.ManagerServant INFO Master manager not found
